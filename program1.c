@@ -26,18 +26,12 @@ void bof(FILE * fd1, FILE * fd2)
 	}
 
 	printf("Buffer starts at: %p\n", buf);
-	printf("b1 %d : b2 %d : b3 :%d",byte_read1, byte_read2, byte_read1 + byte_read2);
 	for(idx = 0; idx < byte_read1 + byte_read2; idx++)
 	{	
-		printf("Loop idx %d\n",idx);
 		idx1 = (idx % 2) ? BUFSIZE - 1 : idx / 2;
 		idx2 = (idx % 2) ? idx / 2 : BUFSIZE - 1;
 		buf[idx] = buf1[idx1] + buf2[idx2];
-		printf("idx1 %d : idx2 %d \n",idx1,idx2);
-		printf(buf);
-		printf("\n");
 	}
-	printf("Done\n");
 
 }
 
